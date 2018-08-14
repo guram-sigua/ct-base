@@ -1,0 +1,10 @@
+ct-base:
+  build: .
+  ports:
+  - "222:22"
+  - "9001:9001"
+  environment:
+    JAVA_HOME: /usr/java/latest
+    JAVA_HEAP_SIZE: -Xms6g -Xmx8g
+  privileged: true
+
