@@ -15,7 +15,7 @@ RUN yum install -y python-pip \
                    git \
                    tar \
                    nano \
-				   openssh-server \
+		   openssh-server \
                    openssh-clients
 				   
 RUN pip install supervisor \
