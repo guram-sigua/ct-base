@@ -1,6 +1,6 @@
 FROM amazonlinux:2
 CMD ["/usr/bin/supervisord"]
-EXPOSE 22 9001
+EXPOSE 9001
 
 ENV JAVA_HOME /usr/java/latest
 
