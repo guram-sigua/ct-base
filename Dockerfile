@@ -13,22 +13,12 @@ RUN yum install -y python-pip \
                    gcc \
                    wget \
                    git \
-                   tar \
-                   nano \
-		   openssh-server \
-                   openssh-clients
+                   tar
 				   
 RUN pip install supervisor \
                 requests==2.5.3 \
                 awscli \
                 boto3
-				
-RUN echo 'root:ContaineR' | chpasswd && \
-    rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_rsa_key && \
-    ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
-    ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
-    sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
-    sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 				
 RUN yum install -y  wget java-1.8.0-openjdk java-1.8.0-openjdk-devel
 
